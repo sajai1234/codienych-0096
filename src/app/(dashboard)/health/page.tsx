@@ -171,8 +171,10 @@ export default function HealthPage() {
 
   const currentAsset = ASSETS_DATA[selectedAsset];
 
+  const [telemetryData, setTelemetryData] = useState<any[]>([]);
+
   // Generate 24 telemetry points tailored to the selected asset and metric
-  const telemetryData = React.useMemo(() => {
+  useEffect(() => {
     const pts = [];
     const base = currentAsset.sensors[activeMetric].baseline;
     const curr = currentAsset.sensors[activeMetric].val;
@@ -198,7 +200,7 @@ export default function HealthPage() {
         threshold: Number((base * 1.4).toFixed(2))
       });
     }
-    return pts;
+    setTelemetryData(pts);
   }, [selectedAsset, activeMetric, currentAsset]);
 
   const handleRunDiagnostic = () => {

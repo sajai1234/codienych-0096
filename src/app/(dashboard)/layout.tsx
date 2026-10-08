@@ -1,5 +1,6 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Activity, Bell, Calendar, HelpCircle, PlusSquare, Heart, CheckCircle2, Box, BrainCircuit, LayoutDashboard, Settings2, ShieldAlert } from "lucide-react";
@@ -10,6 +11,11 @@ export default function DashboardLayout({
   children: React.ReactNode;
 }) {
   const pathname = usePathname();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const PLATFORM_LINKS = [
     { name: "Overview", href: "/overview", icon: LayoutDashboard },
@@ -49,7 +55,7 @@ export default function DashboardLayout({
             <nav className="flex flex-col gap-1">
               {PLATFORM_LINKS.map((link) => {
                 const Icon = link.icon;
-                const isActive = pathname.startsWith(link.href);
+                const isActive = mounted ? pathname.startsWith(link.href) : false;
                 return (
                   <Link 
                     key={link.name} 
@@ -79,7 +85,7 @@ export default function DashboardLayout({
                 // But wait, the user's new dashboard is on /overview. Let's map "Health" to /overview for the Doctor section, 
                 // and maybe map the platform "Overview" to / or /dashboard. 
                 // Let's keep them as distinct links.
-                const isActive = pathname === link.href;
+                const isActive = mounted ? pathname === link.href : false;
                 return (
                   <Link 
                     key={link.name} 
