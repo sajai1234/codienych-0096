@@ -21,7 +21,7 @@ export default function SetupPage() {
   };
 
   return (
-    <div className="min-h-screen bg-background flex flex-col items-center justify-center p-6">
+    <div className="min-h-screen flex flex-col items-center justify-center p-6">
       <div className="w-full max-w-2xl glass-panel p-8 md:p-12 border-t-2 border-t-primary relative overflow-hidden">
         
         {/* Progress Bar */}

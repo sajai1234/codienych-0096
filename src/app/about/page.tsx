@@ -7,7 +7,7 @@ import { ArrowLeft, BrainCircuit, Activity, ShieldAlert, Cpu } from "lucide-reac
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen bg-background pb-20">
+    <div className="min-h-screen pb-20">
       
       {/* Header section */}
       <div className="pt-24 pb-16 px-6 relative overflow-hidden">

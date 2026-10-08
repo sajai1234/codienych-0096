@@ -28,7 +28,7 @@ export default function DashboardLayout({
   ];
 
   return (
-    <div className="min-h-screen flex text-foreground bg-background">
+    <div className="min-h-screen flex text-foreground bg-transparent">
       {/* Sidebar */}
       <aside className="w-64 border-r border-panel-border/50 bg-[#12141a]/80 backdrop-blur-md flex flex-col flex-shrink-0 z-20 h-screen sticky top-0 overflow-y-auto custom-scrollbar">
         <div className="p-6 pb-2">

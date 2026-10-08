@@ -29,11 +29,11 @@ export default function RootLayout({
       >
         {/* Fixed Background Image to ensure it renders correctly */}
         <div 
-          className="fixed inset-0 -z-50 bg-[#141518] bg-cover bg-center bg-no-repeat"
+          className="fixed inset-0 -z-50 bg-[#141518] bg-cover bg-center bg-no-repeat pointer-events-none"
           style={{ backgroundImage: "url('/smart-building-bg.jpg')" }}
         />
         {/* Gradient Overlay for readability */}
-        <div className="fixed inset-0 -z-40 bg-gradient-to-b from-[#141518]/60 to-[#141518]/85" />
+        <div className="fixed inset-0 -z-40 bg-gradient-to-b from-[#141518]/50 via-[#141518]/70 to-[#141518]/85 pointer-events-none" />
         
         <div className="flex-1 flex flex-col z-0 relative">
           {children}
